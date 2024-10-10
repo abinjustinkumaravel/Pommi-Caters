@@ -741,9 +741,9 @@
               </p>
 
               <div class="input-wrapper">
-                <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="off" class="input-field">
+                <input type="text" id="name" name="name" required placeholder="Your Name" autocomplete="off" class="input-field">
 
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number" autocomplete="off" class="input-field">
+                <input type="tel" id="phone" name="phone" required placeholder="Phone Number" autocomplete="off" class="input-field">
               </div>
 
               <div class="input-wrapper">
@@ -752,7 +752,7 @@
                   <ion-icon name="list-outline" aria-hidden="true"></ion-icon>
 
                   <select required id="category" name="person" class="input-field">
-                    <option value="" disabled selected>Select Event</option>
+                    <option value="" selected>Select Event</option>
                     <option value="Wedding">Wedding</option>
                     <option value="Corporate Event">Corporate Event</option>
                     <option value="Private Parties">Private Parties</option>
@@ -766,25 +766,26 @@
 
                 <div class="icon-wrapper">
 
-                  <input type="date" name="reservation-date" class="input-field">
+                  <input type="date" id="date" required name="reservation-date" class="input-field">
 
                 </div>
 
                 <div class="icon-wrapper">
                   <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
 
-                    <input type="text" id="count" name="count" placeholder="Enter People Count" autocomplete="off" class="input-field">
+                    <input type="number" id="count" required name="count" placeholder="Enter People Count" autocomplete="off" class="input-field">
 
                 </div>
 
               </div>
 
-              <textarea name="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
+              <textarea name="message" id="message" placeholder="Message" autocomplete="off" class="input-field"></textarea>
 
               <button type="submit" class="btn btn-secondary">
                 <span class="text text-1">Book Your Order Now</span>
-
               </button>
+
+              <p id="error-message"></p>
 
             </form>
 
@@ -1114,6 +1115,7 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script type="module" src="main.js"></script>
   <!-- 
     - ionicon link
   -->

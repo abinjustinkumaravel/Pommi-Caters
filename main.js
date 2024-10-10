@@ -17,18 +17,23 @@ const firebaseConfig = {
   const db = getFirestore(app)
 
   const form =document.getElementById("orderDetails")
-
-
-
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const name = document.getElementById('').value;
-    const phone = document.getElementById('').value;
-    const category = document.getElementById('').value;
-    const date = document.getElementById('').value;
-    const count = document.getElementById('').value;
-    const message =document.getElementById('').value;
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const category = document.getElementById('category').value;
+    const date = document.getElementById('date').value;
+    const count = document.getElementById('count').value;
+    const message =document.getElementById('message').value;
 
+    let errorMessage;
+    if (phone.length!=10){
+        errorMessage="Invalid Phonenumber"
+        document.getElementById("error-message").innerHTML=errorMessage
+    }
+    else{
+      console.log(name,phone,category,date,count,message)
+    }
   })
 
