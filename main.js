@@ -1,5 +1,6 @@
 import {initializeApp} from "firebase/app"
 import {getFirestore, collection, addDoc} from "firebase/firestore"
+import { Timestamp } from "firebase/firestore/lite";
 
 
 const firebaseConfig = {
@@ -23,17 +24,41 @@ const firebaseConfig = {
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const category = document.getElementById('category').value;
-    const date = document.getElementById('date').value;
+    const date = new Date(document.getElementById('date').value);
     const count = document.getElementById('count').value;
     const message =document.getElementById('message').value;
 
     let errorMessage;
-    if (phone.length!=10){
+
+    if (!name || !phone || !category || !date || !count || !message){
+
+      errorMessage ="All fields are required";
+      document.getElementById('error-message'),innerHTML=errorMessage;
+    }
+
+
+    if (phone.length!=10 || isNaN(phone)){
         errorMessage="Invalid Phonenumber"
         document.getElementById("error-message").innerHTML=errorMessage
     }
     else{
-      console.log(name,phone,category,date,count,message)
+      console.log(date)
+      // try {
+      //   await addDoc(collection(db,"Order Details"),{
+      //     name:name,
+      //     phonenumber:Number(phone),
+      //     category:category,
+      //     date:date,
+      //     count:Number(count),
+      //     message: message
+      //   });
+      //   alert("Order Booked Successfully, Our Team Will contact you with in 24 Hours")
+      //   form.reset()
+      // }
+      // catch (error){
+      //   console.error("Error in Booking order")
+      //   document.getElementById("error-message").innerHTML = "Failed to submit the order. Please try again.";
+      // }
     }
-  })
+  });
 
