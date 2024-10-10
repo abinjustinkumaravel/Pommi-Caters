@@ -1,6 +1,5 @@
 import {initializeApp} from "firebase/app"
 import {getFirestore, collection, addDoc} from "firebase/firestore"
-import { Timestamp } from "firebase/firestore/lite";
 
 
 const firebaseConfig = {
