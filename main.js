@@ -1,6 +1,5 @@
 import {initializeApp} from "firebase/app"
 import {getFirestore, collection, addDoc} from "firebase/firestore"
-import { Timestamp } from "firebase/firestore/lite";
 
 
 const firebaseConfig = {
@@ -10,7 +9,7 @@ const firebaseConfig = {
     storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
     messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
     appId: import.meta.env.VITE_APP_ID,
-    measurementId:import.meta.env.VITE_MEASUREMENT_ID
+    measurementId: import.meta.env.VITE_MEASUREMENT_ID
   };
 
 
