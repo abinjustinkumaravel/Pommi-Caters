@@ -42,23 +42,23 @@ const firebaseConfig = {
         document.getElementById("error-message").innerHTML=errorMessage
     }
     else{
-      console.log(date)
-      // try {
-      //   await addDoc(collection(db,"Order Details"),{
-      //     name:name,
-      //     phonenumber:Number(phone),
-      //     category:category,
-      //     date:date,
-      //     count:Number(count),
-      //     message: message
-      //   });
-      //   alert("Order Booked Successfully, Our Team Will contact you with in 24 Hours")
-      //   form.reset()
-      // }
-      // catch (error){
-      //   console.error("Error in Booking order")
-      //   document.getElementById("error-message").innerHTML = "Failed to submit the order. Please try again.";
-      // }
+      // console.log(date)
+      try {
+        await addDoc(collection(db,"Order Details"),{
+          name:name,
+          phonenumber:Number(phone),
+          category:category,
+          date:date,
+          count:Number(count),
+          message: message
+        });
+        alert("Order Booked Successfully, Our Team Will contact you with in 24 Hours")
+        form.reset()
+      }
+      catch (error){
+        console.error("Error in Booking order")
+        document.getElementById("error-message").innerHTML = "Failed to submit the order. Please try again.";
+      }
     }
   });
 
